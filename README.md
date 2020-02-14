@@ -27,11 +27,23 @@ Step 4: 配置 Layer
 
 Step 5: 修改 build/conf/local.conf 
 * 將 MACHINE?= 這行改為 MACHINE ?= "raspberrypi3" 或你要用的 model
+* 另外添加此2行,如下:
+* #此行表示將 driver 編譯到系統內
+* MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "ir-mod"       
+* #此行表示 開機自動載入 ko driber
+* KERNEL_MODULE_AUTOLOAD += "ir-mod"   
 
 Step 6: Build image
 * bitbake core-image-base
 
-Step 7: 測試
-* lsmod   # 檢查 ir-mod.ko 是否被載入.
-* 對著 IR 發射器 按下遙控器
-* echo 0 > /sys/kernel/debug/ir/dump      #就可看到 波形資料
+Step 7: Burn iamge
+* 在 poky/build/tmp/deploy/image/raspberrypi3 下面尋找 core-image-base-raspberrypi3-20200214040007.rootfs.rpi-sdimg
+* 將這個 .rpi-sdimg 燒到SD card  (.rpi-sdimg檔名每次編譯會有一些差異, 請自行參考實際檔名)
+
+Step 8: 測試
+* 開機
+* #檢查 ir-mod.ko 是否被載入.
+* lsmod      
+* 對著 IR 接收器,按下遙控器
+* #查看波形資料
+* echo 0 > /sys/kernel/debug/ir/dump      
