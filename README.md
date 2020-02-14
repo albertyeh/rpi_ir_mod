@@ -32,6 +32,6 @@ Step 6: Build image
 * bitbake core-image-base
 
 Step 7: 測試
-* * lsmod   # 檢查 ir-mod.ko 是否被載入.
+* lsmod   # 檢查 ir-mod.ko 是否被載入.
 * 對著 IR 發射器 按下遙控器
 * echo 0 > /sys/kernel/debug/ir/dump      #就可看到 波形資料
