@@ -31,7 +31,7 @@ Step 5: 修改 build/conf/local.conf
 * 另外添加此2行,如下:
 * #此行表示將 driver 編譯到系統內
 * MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "ir-mod"       
-* #此行表示 開機自動載入 ko driber
+* #此行表示 開機自動載入 ko driver
 * KERNEL_MODULE_AUTOLOAD += "ir-mod"   
 
 Step 6: Build image
