@@ -26,7 +26,7 @@ Step 4: 配置 Layer
 * bitbake-layers add-layer ../meta-skeleton
 
 Step 5: 修改 build/conf/local.conf 
-* 修改MACCHINE這行為 MACHINE ?= "raspberrypi3"
+* 將 MACHINE?= 這行改為 MACHINE ?= "raspberrypi3" 或你要用的 model
 
 Step 6: Build image
 * bitbake core-image-base
