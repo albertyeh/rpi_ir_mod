@@ -1,4 +1,5 @@
-本範例使用 GPIO 17 為 Input PIN ; GPIO 18 為 Output PIN , 複製 GPIO 17 訊號.
+1. 本範例使用 GPIO 17 為 Input PIN ; GPIO 18 為 Output PIN , 複製 GPIO 17 訊號.
+2. 可用 echo 0 > /sys/kernel/debug/ir/dump , 輸出記錄到的 IR raw data.
 
 How to use the driver
 ===========
