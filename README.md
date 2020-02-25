@@ -29,9 +29,8 @@ Step 4: 配置 Layer
 Step 5: 修改 build/conf/local.conf 
 * 將 MACHINE?= 這行改為 MACHINE ?= "raspberrypi3" 或你要用的 model
 * 另外添加此2行,如下:
-* #此行表示將 driver 編譯到系統內
+* #行1表示將 driver 編譯到系統內;行2表示 開機自動載入 ko driver
 * MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "ir-mod"       
-* #此行表示 開機自動載入 ko driver
 * KERNEL_MODULE_AUTOLOAD += "ir-mod"   
 
 Step 6: Build image
